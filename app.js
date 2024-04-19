@@ -30,20 +30,32 @@ async function main(){
 }
 
 app.get("/",(req,res)=>{
-    res.send("basic root page");
+    res.render("listings/home.ejs");
 })
 
 app.get("/home",(req,res)=>{
-    res.send("basic home page");
+    res.render("listings/home.ejs");
 })
 
-app.get("/",(req,res)=>{
-    res.send("basic home page");
+app.get("/createquiz",(req,res)=>{
+    res.render("");
 })
 
+app.get("/featuredquiz",(req,res)=>{
+    res.render("");
+})
 
+app.get("/categories",(req,res)=>{
+    res.render("");
+})
 
+app.get("/about",(req,res)=>{
+    res.render("");
+})
 
+app.get("/contact",(req,res)=>{
+    res.render("");
+})
 
 app.listen(port,()=>{
     console.log(`port is connected to ${port}`)
