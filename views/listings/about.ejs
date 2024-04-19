@@ -1,0 +1,148 @@
+<% layout("layouts/boilerplate")%>
+<style>
+    /* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-section,
+.team-section {
+  margin-bottom: 60px;
+}
+
+.about-section h2,
+.team-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  flex: 0 0 500px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-info {
+  flex-grow: 1;
+}
+
+.about-info p {
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+}
+
+.team-member {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+</style>
+<body>
+  <main>
+    <section class="about-section">
+      <h2>About Quiz Enthusiast</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="about-hero.jpg" alt="Quiz Enthusiast">
+        </div>
+        <div class="about-info">
+          <p>Quiz Enthusiast is the premier destination for quiz takers and creators alike. Our mission is to provide a fun, engaging, and educational platform where people of all interests can test their knowledge, discover new passions, and challenge their friends.</p>
+          <p>Since our inception, we've been dedicated to curating an ever-expanding library of high-quality quizzes that cover a wide range of topics, from science and history to sports and entertainment. Whether you're a trivia buff or simply curious to learn more, you'll find something to pique your interest on Quiz Enthusiast.</p>
+          <p>Our team of dedicated quiz experts work tirelessly to ensure that each quiz is accurate, well-designed, and truly captivating. We believe that learning should be enjoyable, and that's why we strive to make every quiz experience both informative and entertaining.</p>
+          <a href="#" class="cta-button">Create Your Own Quiz</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="team-member-1.jpg" alt="John Doe">
+          <h3>John Doe</h3>
+          <p>Co-Founder and CEO</p>
+        </div>
+        <div class="team-member">
+          <img src="team-member-2.jpg" alt="Jane Smith">
+          <h3>Jane Smith</h3>
+          <p>Co-Founder and CTO</p>
+        </div>
+        <div class="team-member">
+          <img src="team-member-3.jpg" alt="Michael Johnson">
+          <h3>Michael Johnson</h3>
+          <p>Head of Content</p>
+        </div>
+        <div class="team-member">
+          <img src="team-member-4.jpg" alt="Sarah Lee">
+          <h3>Sarah Lee</h3>
+          <p>Lead Designer</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

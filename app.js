@@ -38,23 +38,23 @@ app.get("/home",(req,res)=>{
 })
 
 app.get("/createquiz",(req,res)=>{
-    res.render("");
+    res.render("listings/createquiz.ejs");
 })
 
 app.get("/featuredquiz",(req,res)=>{
-    res.render("");
+    res.render("listings/featuredquiz.ejs");
 })
 
 app.get("/categories",(req,res)=>{
-    res.render("");
+    res.render("listings/category.ejs");
 })
 
 app.get("/about",(req,res)=>{
-    res.render("");
+    res.render("listings/about.ejs");
 })
 
 app.get("/contact",(req,res)=>{
-    res.render("");
+    res.render("listings/contact.ejs");
 })
 
 app.listen(port,()=>{
