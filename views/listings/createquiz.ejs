@@ -1,0 +1,189 @@
+<% layout("layouts/boilerplate")%>
+  <style>
+    /* Reset some default styles */
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.create-quiz-section {
+  margin-bottom: 60px;
+}
+
+.create-quiz-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.create-quiz-content {
+  display: flex;
+  gap: 40px;
+}
+
+.quiz-form {
+  flex-grow: 1;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.question-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.question-input input {
+  flex-grow: 1;
+}
+
+.answer-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.answer-options input {
+  width: 100%;
+}
+
+.question-input button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-question {
+  display: block;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.create-quiz-info {
+  flex: 0 0 300px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.create-quiz-info h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.create-quiz-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.create-quiz-info li {
+  margin-bottom: 10px;
+}
+
+</style>
+
+<body>
+
+  <main>
+    <section class="create-quiz-section">
+      <h2>Create Your Own Multiple-Choice Quiz</h2>
+      <div class="create-quiz-content">
+        <form class="quiz-form">
+          <div class="form-group">
+            <label for="quiz-title">Quiz Title</label>
+            <input type="text" id="quiz-title" name="quiz-title" required>
+          </div>
+          <div class="form-group">
+            <label for="quiz-description">Quiz Description</label>
+            <textarea id="quiz-description" name="quiz-description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="quiz-category">Quiz Category</label>
+            <select id="quiz-category" name="quiz-category" required>
+              <option value="">Select a Category</option>
+              <option value="science">Science</option>
+              <option value="sports">Sports</option>
+              <option value="history">History</option>
+              <option value="geography">Geography</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="math">Math</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quiz-questions">Quiz Questions</label>
+            <div id="quiz-questions">
+              <div class="question-input">
+                <input type="text" name="question[]" placeholder="Question" required>
+                <div class="answer-options">
+                  <input type="text" name="answer[0][]" placeholder="Option A" required>
+                  <input type="text" name="answer[0][]" placeholder="Option B" required>
+                  <input type="text" name="answer[0][]" placeholder="Option C" required>
+                  <input type="text" name="answer[0][]" placeholder="Option D" required>
+                  <input type="number" name="correct-answer[0]" placeholder="Correct Answer (1-4)" required>
+                </div>
+                <button type="button" class="remove-question">Remove</button>
+              </div>
+              <button type="button" class="add-question">Add Question</button>
+            </div>
+          </div>
+          <button type="submit" class="cta-button">Submit Quiz</button>
+        </form>
+        <div class="create-quiz-info">
+          <h3>Tips for Creating Great Quizzes</h3>
+          <ul>
+            <li>Write clear and concise multiple-choice questions</li>
+            <li>Provide accurate and well-thought-out answer options</li>
+            <li>Clearly indicate the correct answer for each question</li>
+            <li>Choose a suitable category for your quiz</li>
+            <li>Make your quiz visually appealing and engaging</li>
+            <li>Test your quiz with friends and family</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
