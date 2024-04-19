@@ -25,13 +25,21 @@ main().then(()=>{
 .catch(()=>{
     console.log("error");
 })
-
 async function main(){
     await mongoose.connect(MONGO_URL);
 }
 
+app.get("/",(req,res)=>{
+    res.send("basic root page");
+})
 
+app.get("/home",(req,res)=>{
+    res.send("basic home page");
+})
 
+app.get("/",(req,res)=>{
+    res.send("basic home page");
+})
 
 
 
