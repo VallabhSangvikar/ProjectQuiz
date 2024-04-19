@@ -1,0 +1,141 @@
+<% layout("layouts/boilerplate")%>
+  <style>
+
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.quiz-categories {
+  margin-bottom: 60px;
+}
+
+.quiz-categories h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.category-card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+}
+
+.category-image {
+  flex: 0 0 150px;
+  background-color: #708caa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-image img {
+  max-width: 70px;
+}
+
+.category-info {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.category-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.category-info p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.category-info .cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+  </style>
+<body>
+
+  <main>
+    <section class="quiz-categories">
+      <h2>Explore Quizzes by Category</h2>
+      <div class="category-container">
+        <div class="category-card">
+          <div class="category-image">
+            <img src="science.svg" alt="Science">
+          </div>
+          <div class="category-info">
+            <h3>Science</h3>
+            <p>Delve into the wonders of the natural world.</p>
+            <a href="#" class="cta-button">Take Science Quizzes</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-image">
+            <img src="sports.svg" alt="Sports">
+          </div>
+          <div class="category-info">
+            <h3>Sports</h3>
+            <p>Test your knowledge of athletics and games.</p>
+            <a href="#" class="cta-button">Take Sports Quizzes</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-image">
+            <img src="history.svg" alt="History">
+          </div>
+          <div class="category-info">
+            <h3>History</h3>
+            <p>Explore the stories that shaped our past.</p>
+            <a href="#" class="cta-button">Take History Quizzes</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-image">
+            <img src="geography.svg" alt="Geography">
+          </div>
+          <div class="category-info">
+            <h3>Geography</h3>
+            <p>Journey across the globe with our geography quizzes.</p>
+            <a href="#" class="cta-button">Take Geography Quizzes</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-image">
+            <img src="entertainment.svg" alt="Entertainment">
+          </div>
+          <div class="category-info">
+            <h3>Entertainment</h3>
+            <p>Indulge in quizzes about movies, TV, music, and more.</p>
+            <a href="#" class="cta-button">Take Entertainment Quizzes</a>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-image">
+            <img src="math.svg" alt="Math">
+          </div>
+          <div class="category-info">
+            <h3>Math</h3>
+            <p>Challenge your mind with math-themed quizzes.</p>
+            <a href="#" class="cta-button">Take Math Quizzes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
