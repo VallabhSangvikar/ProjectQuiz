@@ -7,6 +7,7 @@ const ejsMate=require("ejs-mate");
 const port=4040;
 const mongoose =require("mongoose");
 const methodOverride=require("method-override");
+const Quiz=require("./models/createquizModel");
 
 
 app.use(methodOverride("_method"));
