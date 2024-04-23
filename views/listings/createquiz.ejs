@@ -1,189 +1,352 @@
 <% layout("layouts/boilerplate")%>
   <style>
     /* Reset some default styles */
-/* Main content styles */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+    /* Main content styles */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-.create-quiz-section {
-  margin-bottom: 60px;
-}
+    .create-quiz-section {
+      margin-bottom: 60px;
+    }
 
-.create-quiz-section h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
+    .create-quiz-section h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
 
-.create-quiz-content {
-  display: flex;
-  gap: 40px;
-}
+    .create-quiz-content {
+      display: flex;
+      gap: 40px;
+    }
 
-.quiz-form {
-  flex-grow: 1;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
+    .quiz-form {
+      flex-grow: 1;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
 
-.form-group {
-  margin-bottom: 20px;
-}
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-.question-input {
+    .question-input {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .question-input input {
+      flex-grow: 1;
+    }
+
+    .answer-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+
+    .answer-options input {
+      width: 100%;
+    }
+
+    .answer-options button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 60px;
+      margin-right: -20px;
+    }
+
+    .add-question {
+      display: block;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    
+    /* Styles for the question board container */
+/* Create quiz info styles */
+.create-quiz-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  padding: 40px;
+  background-color:#f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  max-height: 800px; /* Adjust this value as needed */
+  overflow-y: auto;
+  margin: 0 auto;
+}
+/* Customize scrollbar appearance */
+.create-quiz-info::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
 }
 
-.question-input input {
-  flex-grow: 1;
+.create-quiz-info::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the track area */
 }
 
-.answer-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+.create-quiz-info::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the thumb */
 }
 
-.answer-options input {
+.create-quiz-info::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the thumb on hover */
+}
+/* Styles for added questions */
+.addedquestion {
+  color:#007bff;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  word-wrap: break-word;
   width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
-.question-input button {
+.addedquestion:hover {
+  background-color: #f0f0f0;
+}
+
+/* Styles for remove button */
+.addedquestion button {
+  margin-left: 10px;
+  padding: 5px 10px;
   background-color: #dc3545;
   color: #fff;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-}
-
-.add-question {
-  display: block;
-  margin-top: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.cta-button {
   display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.create-quiz-info {
-  flex: 0 0 300px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+.addedquestion button:hover {
+  background-color: #c82333;
 }
+  </style>
 
-.create-quiz-info h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
+  <body>
 
-.create-quiz-info ul {
-  list-style-type: none;
-  padding-left: 0;
-}
+    <main>
+      <section class="create-quiz-section">
+        <h2>Create Your Own Multiple-Choice Quiz</h2>
+        <div class="create-quiz-content">
 
-.create-quiz-info li {
-  margin-bottom: 10px;
-}
-
-</style>
-
-<body>
-
-  <main>
-    <section class="create-quiz-section">
-      <h2>Create Your Own Multiple-Choice Quiz</h2>
-      <div class="create-quiz-content">
-        <form class="quiz-form">
-          <div class="form-group">
-            <label for="quiz-title">Quiz Title</label>
-            <input type="text" id="quiz-title" name="quiz-title" required>
-          </div>
-          <div class="form-group">
-            <label for="quiz-description">Quiz Description</label>
-            <textarea id="quiz-description" name="quiz-description" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="quiz-category">Quiz Category</label>
-            <select id="quiz-category" name="quiz-category" required>
-              <option value="">Select a Category</option>
-              <option value="science">Science</option>
-              <option value="sports">Sports</option>
-              <option value="history">History</option>
-              <option value="geography">Geography</option>
-              <option value="entertainment">Entertainment</option>
-              <option value="math">Math</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="quiz-questions">Quiz Questions</label>
-            <div id="quiz-questions">
-              <div class="question-input">
-                <input type="text" name="question[]" placeholder="Question" required>
-                <div class="answer-options">
-                  <input type="text" name="answer[0][]" placeholder="Option A" required>
-                  <input type="text" name="answer[0][]" placeholder="Option B" required>
-                  <input type="text" name="answer[0][]" placeholder="Option C" required>
-                  <input type="text" name="answer[0][]" placeholder="Option D" required>
-                  <input type="number" name="correct-answer[0]" placeholder="Correct Answer (1-4)" required>
-                </div>
-                <button type="button" class="remove-question">Remove</button>
-              </div>
-              <button type="button" class="add-question">Add Question</button>
+          <form class="quiz-form" action="/home" method="post">
+            <div class="form-group">
+              <label for="quiz-title">Quiz Title</label>
+              <input type="text" id="quiz-title" name="quizTitle" required>
             </div>
+            <div class="form-group">
+              <label for="quiz-description">Quiz Description</label>
+              <textarea id="quiz-description" name="quizDescription" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="quiz-category">Quiz Category</label>
+              <select id="quiz-category" name="quizCategory" required>
+                <option value="">Select a Category</option>
+                <option value="science">Science</option>
+                <option value="sports">Sports</option>
+                <option value="history">History</option>
+                <option value="geography">Geography</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="math">Math</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quiz-questions">Quiz Questions</label>
+              <div id="quiz-questions">
+                <div class="question-input">
+                  <input type="text" class="question" placeholder="Question" >
+                  <div class="answer-options">
+                    <input type="text"  class="opt" placeholder="Option A" >
+                    <input type="text"  class="opt" placeholder="Option B" >
+                    <input type="text"  class="opt" placeholder="Option C" >
+                    <input type="text"  class="opt" placeholder="Option D" >
+                    <input type="text"  class="ans" placeholder="Correct Answer (A-D)">
+                    <button type="button" class="clearbtn">Clear</button>
+                  </div>
+                </div>
+                <button type="button" class="add-question">Add Question</button>
+              </div>
+            </div>
+            <input type="hidden" name="questiondata" class="hidden-input">
+            <button type="submit" class="cta-button">Submit Quiz</button>
+          </form>
+          <div class="create-quiz-info">
+            <h3>Questions you have added</h3>
           </div>
-          <button type="submit" class="cta-button">Submit Quiz</button>
-        </form>
-        <div class="create-quiz-info">
-          <h3>Tips for Creating Great Quizzes</h3>
-          <ul>
-            <li>Write clear and concise multiple-choice questions</li>
-            <li>Provide accurate and well-thought-out answer options</li>
-            <li>Clearly indicate the correct answer for each question</li>
-            <li>Choose a suitable category for your quiz</li>
-            <li>Make your quiz visually appealing and engaging</li>
-            <li>Test your quiz with friends and family</li>
-          </ul>
         </div>
-      </div>
-    </section>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+  <script>
+  let questions = [];
+let question = document.querySelector(".question");
+let options = document.querySelectorAll(".opt");
+let ans = document.querySelector(".ans");
+let addButton = document.querySelector(".add-question");
+let questionboard = document.querySelector(".create-quiz-info");
+let submitBtn=document.querySelector(".cta-button");
+let hiddeninput=document.querySelector(".hidden-input");
+let clearbtn=document.querySelector(".clearbtn");
+
+function clearinput(){  //clears the inputs after clicking on add button as it is called in addButton eventlistener
+  question.value='';
+  for(i=0;i<4;i++){
+    options[i].value='';
+  }
+  ans.value='';
+}
+
+clearbtn.addEventListener('click',()=>clearinput());
+
+addButton.addEventListener("click", () => {
+
+  let div = document.createElement("div");
+  let removebtn = document.createElement("button");
+  removebtn.innerText = 'remove';
+  removebtn.classList.add("remove");
+
+  let br = document.createElement('br');
+
+  let quest = document.createElement("h4");
+quest.classList.add("question-text");
+quest.innerText = question.value;
+quest.style.display = "inline";
+quest.style.color='black'
+
+let opt1 = document.createElement("p");
+opt1.classList.add("option1");
+opt1.innerText = options[0].value;
+opt1.style.color = "black";
+
+let opt2 = document.createElement("p");
+opt2.classList.add("option2");
+opt2.innerText = options[1].value;
+opt2.style.color = "black";
+
+let opt3 = document.createElement("p");
+opt3.classList.add("option3");
+opt3.innerText = options[2].value;
+opt3.style.color = "black";
+
+let opt4 = document.createElement("p");
+opt4.classList.add("option4");
+opt4.innerText = options[3].value;
+opt4.style.color = "black";
+
+let answer = document.createElement("p");
+answer.innerText=ans.value;
+answer.classList.add("answer");
+answer.style.color='black';
+
+div.classList.add("addedquestion");
+questionboard.appendChild(div);
+
+div.append("Question:",quest);
+div.append(br);
+div.append('option A:',opt1);
+div.append('option B:',opt2);
+div.append('option C:',opt3);
+div.append('option D:',opt4);
+div.append('Answer :',answer);
+
+div.appendChild(removebtn);
+
+clearinput();
+});
+
+// Add event listener to the parent element using event delegation
+questionboard.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove')) {
+    let parentDiv = event.target.parentElement;
+    if (parentDiv) {
+      parentDiv.remove();
+    }
+  }
+});
+
+submitBtn.addEventListener('click', () => {
+  // initialize the questions array
+  questions = [];
+
+  // Get all the question divs from the questionboard
+  const questionDivs = questionboard.querySelectorAll('.addedquestion');
+
+  // Loop through each question div and store its data in the questions array
+  questionDivs.forEach(questionDiv => {
+    let questionText = questionDiv.querySelector('.question-text').textContent;
+    let option1 = questionDiv.querySelector('.option1').textContent;
+    let option2 = questionDiv.querySelector('.option2').textContent;
+    let option3 = questionDiv.querySelector('.option3').textContent;
+    let option4 = questionDiv.querySelector('.option4').textContent;
+    let answer = questionDiv.querySelector('.answer').textContent;
+
+    questions.push({
+      quest: questionText,
+      option1:option1,
+      option2:option2,
+      option3:option3,
+      option4:option4,
+      ans: answer
+    });
+
+  });
+
+  // You can now save the questions array or perform any other necessary actions
+  let arrayString = JSON.stringify(questions);
+  hiddeninput.value=arrayString;
+});
+  </script>

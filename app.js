@@ -58,6 +58,17 @@ app.get("/contact",(req,res)=>{
     res.render("listings/contact.ejs");
 })
 
+app.post("/home",(req,res)=>{
+    let questiondata=JSON.parse(req.body.questiondata)
+    let addquiz=new Quiz({
+        quiztitle:req.body.questionTitle,
+        quizdescription:req.body.quizDescription,
+        quizCategory:req.body.quizCategory,
+        questions:questiondata
+    });
+    addquiz.save();
+})
+
 app.listen(port,()=>{
     console.log(`port is connected to ${port}`)
 })
