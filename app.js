@@ -58,6 +58,10 @@ app.get("/contact",(req,res)=>{
     res.render("listings/contact.ejs");
 })
 
+app.get("/quizpage",(req,res)=>{
+    res.render("listings/quizpage.ejs");
+});
+
 app.listen(port,()=>{
     console.log(`port is connected to ${port}`)
 })
