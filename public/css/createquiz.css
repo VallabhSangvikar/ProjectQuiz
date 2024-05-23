@@ -1,0 +1,174 @@
+/* Reset some default styles */
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.create-quiz-section {
+  margin-bottom: 60px;
+}
+
+.create-quiz-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.create-quiz-content {
+  display: flex;
+  gap: 40px;
+}
+
+.quiz-form {
+  flex-grow: 1;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.question-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.question-input input {
+  flex-grow: 1;
+}
+
+.answer-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.answer-options input {
+  width: 100%;
+}
+
+.answer-options button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 60px;
+  margin-right: -20px;
+}
+
+.add-question {
+  display: block;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Styles for the question board container */
+/* Create quiz info styles */
+.create-quiz-info {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px;
+background-color:#f1f1f1;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+width: 400px;
+max-width: 90%;
+max-height: 800px; /* Adjust this value as needed */
+overflow-y: auto;
+margin: 0 auto;
+}
+/* Customize scrollbar appearance */
+.create-quiz-info::-webkit-scrollbar {
+width: 8px; /* Width of the scrollbar */
+}
+
+.create-quiz-info::-webkit-scrollbar-track {
+background-color: #f1f1f1; /* Color of the track area */
+}
+
+.create-quiz-info::-webkit-scrollbar-thumb {
+background-color: #888; /* Color of the scrollbar thumb */
+border-radius: 4px; /* Rounded corners of the thumb */
+}
+
+.create-quiz-info::-webkit-scrollbar-thumb:hover {
+background-color: #555; /* Color of the thumb on hover */
+}
+/* Styles for added questions */
+.addedquestion {
+color:#007bff;
+margin-bottom: 15px;
+padding: 15px;
+background-color: #f8f8f8;
+border-radius: 5px;
+font-size: 16px;
+font-weight: 500;
+word-wrap: break-word;
+width: 100%;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s ease;
+}
+
+.addedquestion:hover {
+background-color: #f0f0f0;
+}
+
+/* Styles for remove button */
+.addedquestion button {
+margin-left: 10px;
+padding: 5px 10px;
+background-color: #dc3545;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+display: inline-block;
+font-size: 14px;
+transition: background-color 0.3s ease;
+}
+
+.addedquestion button:hover {
+background-color: #c82333;
+}
