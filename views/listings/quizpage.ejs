@@ -152,58 +152,7 @@
     document.getElementById("quiz-title").innerText = addtitle;
 
     //bringing the questions dynamically
-    var questions = [
-      {
-        question: "What is the capital city of France?",
-        options: ["Paris", "Rome", "Berlin", "London"],
-        answer: "Paris"
-      },
-      {
-        question: "The Earth revolves around the Moon.",
-        options: ["true", "false", "all of the above", "none of the above"],
-        answer: "false"
-      },
-      {
-        question: "Who wrote 'Romeo and Juliet'?",
-        options: ["William Shakespeare", "Charles Dickens", "Jane Austen", "F. Scott Fitzgerald"],
-        answer: "William Shakespeare"
-      },
-      {
-        question: "What is the chemical symbol for water?",
-        options: ["H2O", "CO2", "NaCl", "O2"],
-        answer: "H2O"
-      },
-      {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Mars", "Venus", "Jupiter", "Mercury"],
-        answer: "Mars"
-      },
-      {
-        question: "Who discovered gravity?",
-        options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
-        answer: "Isaac Newton"
-      },
-      {
-        question: "What is the largest mammal in the world?",
-        options: ["Blue Whale", "Elephant", "Giraffe", "Hippopotamus"],
-        answer: "Blue Whale"
-      },
-      {
-        question: "Which country is famous for the Taj Mahal?",
-        options: ["India", "China", "Egypt", "Japan"],
-        answer: "India"
-      },
-      {
-        question: "Who painted the Mona Lisa?",
-        options: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"],
-        answer: "Leonardo da Vinci"
-      },
-      {
-        question: "What is the chemical symbol for gold?",
-        options: ["Au", "Ag", "Pb", "Fe"],
-        answer: "Au"
-      }
-    ];
+    var questions = quizapp.quizzes.find();
 
     let QuestionShow = document.getElementById("questiontitle");
     let opt1 = document.getElementById("labelopt1");
