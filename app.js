@@ -64,12 +64,17 @@ app.get("/quizpage",(req,res)=>{
 app.post("/home",(req,res)=>{
     let questiondata=JSON.parse(req.body.questiondata)
     let addquiz=new Quiz({
-        quiztitle:req.body.questionTitle,
+        quiztitle:req.body.quizTitle,
         quizdescription:req.body.quizDescription,
         quizCategory:req.body.quizCategory,
         questions:questiondata
     });
     addquiz.save();
+    res.redirect("/home");
+})
+app.get("/quizlist/:category",(req,res)=>{
+    let {category}=req.params;
+    res.render("listings/testlist.ejs");
 })
 
 app.listen(port,()=>{
