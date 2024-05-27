@@ -1,0 +1,34 @@
+<% layout("layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/testrules.css">
+<body>
+    <main>
+        <h2>Test Rules</h2>
+        <div class="rules">
+            <ol>
+                <li>Read each question carefully before answering.</li>
+                <li>You cannot go back and change your answers once submitted.</li>
+                <li>The test is timed, and you will have 60 minutes to complete it.</li>
+                <li>Cheating or any form of academic dishonesty is strictly prohibited.</li>
+                <li>Make sure to double-check your answers before submitting.</li>
+            </ol>
+        </div>
+        <div class="agree-checkbox">
+            <input type="checkbox" id="agreeCheckbox">
+            <label for="agreeCheckbox">I agree to the test rules</label>
+        </div>
+        <button class="start-btn" disabled>Start Test</button>
+    </main>
+    <script>
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const startBtn = document.querySelector('.start-btn');
+
+        agreeCheckbox.addEventListener('change', () => {
+            startBtn.disabled = !agreeCheckbox.checked;
+        });
+
+        startBtn.addEventListener('click', () => {
+            // Redirect to the test page or perform the necessary actions
+            window.location.href = '/test';
+        });
+    </script>
+</body>

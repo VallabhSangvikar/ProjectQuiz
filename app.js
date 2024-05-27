@@ -72,9 +72,13 @@ app.post("/home",(req,res)=>{
     addquiz.save();
     res.redirect("/home");
 })
-app.get("/quizlist/:category",(req,res)=>{
+app.get("/quizlist/:category",async(req,res)=>{
     let {category}=req.params;
-    res.render("listings/testlist.ejs");
+    let tests= await Quiz.find({quizCategory:category});
+    res.render("listings/testlist.ejs",{tests});
+});
+app.get("/quiz/rules",(req,res)=>{
+    res.render("listings/testrules.ejs");
 })
 
 app.listen(port,()=>{

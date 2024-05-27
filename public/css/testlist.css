@@ -22,15 +22,18 @@ main {
   }
 
   .quiz-item {
+  
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.416);
-    display: flex;
+    display:flex;
     flex-direction: column;
+    text-wrap:wrap;
     align-items: center;
     text-align: center;
     transition: transform 0.3s;
+    width: 15rem;
   }
 
   .quiz-item:hover {
