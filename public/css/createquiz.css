@@ -14,8 +14,8 @@ main {
 /* Create Quiz Section */
 .create-quiz-section {
   border: 2px solid #007bff;
-  background-color: #fff;
-  padding: 20px;
+  background-color: #f5f5f5;
+  padding: 20px 40px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -28,6 +28,7 @@ main {
 /* Form Styles */
 .form-group {
   margin-bottom: 20px;
+  
 }
 
 .form-group label {

@@ -1,45 +1,50 @@
-<% layout("layouts/boilerplate")%>
-<link rel="stylesheet" href="css/quizpage.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/quizpage.css">
+</head>
 <body>
     <main>
         <section class="quiz-section">
-          <h2 id="quiz-title">Quiz Title:  </h2>
-          <p id="quiz-description">Quiz Description:</p>
-          <div class="question-navigation">
-            <!-- Question navigation buttons will be dynamically added here -->
+          <!-- Added progress bar -->
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
           </div>
+          <!-- Added timer -->
+          <div class="timer">Time left: <span id="time-left">1:32</span></div>
           <div id="quiz-container">
-            <h2>Question</h2>
-            <!-- Quiz questions will be dynamically added here -->
-            <h3 id="questiontitle"></h3>
+            <h2 id="questiontitle">What is the capital of France?</h2>
             <br>
-            <h4>Options</h4>
             <div class="options">
               <div class="option">
-                <input type="radio" name="options" id="option1" value="option1">
-                <label for="option1" id="labelopt1"></label>
+                <input type="radio" name="options" id="option1" value="New York">
+                <label for="option1" id="labelopt1">New York</label>
               </div>
               <div class="option">
-                <input type="radio" name="options" id="option2" value="option2">
-                <label for="option2" id="labelopt2"></label>
+                <input type="radio" name="options" id="option2" value="London">
+                <label for="option2" id="labelopt2">London</label>
               </div>
               <div class="option">
-                <input type="radio" name="options" id="option3" value="option3">
-                <label for="option3" id="labelopt3"></label>
+                <input type="radio" name="options" id="option3" value="Paris">
+                <label for="option3" id="labelopt3">Paris</label>
               </div>
               <div class="option">
-                <input type="radio" name="options" id="option4" value="option4">
-                <label for="option4" id="labelopt4"></label>
+                <input type="radio" name="options" id="option4" value="Tokyo">
+                <label for="option4" id="labelopt4">Tokyo</label>
               </div>
             </div>
             <div class="question-navigation">
-              <button id="savenextbtn">Save & Next</button>  
-              <button id="previousbtn">Previous</button>
+              <button id="previousbtn">Previous question</button>
+              <button id="savenextbtn">Next question</button>  
             </div>
           </div>
-          
         </section>
-      </main>
-      <script src="js/quizpage.js"></script>
+    </main>
+    <script src="js/quizpage.js"></script>
 </body>
+
+</html>
 

@@ -1,48 +1,70 @@
-<% layout("layouts/boilerplate") %>
+<% layout("layouts/boilerplate")%>
 <link rel="stylesheet" href="css/featuredquiz.css">
 <body>
-  <main>
-    <section class="create-quiz-section">
-      <!-- Quiz creation form -->
-    </section>
-
-    <section class="user-history">
-      <h2>Your Quiz History</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Quiz Title</th>
-            <th>Category</th>
-            <th>Date Taken</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- User's quiz history will be dynamically populated here -->
-        </tbody>
-      </table>
-    </section>
-  </main>
-
-  <script>
-    // Assuming you have an array of quiz history data
-    const quizHistory = [
-      { title: 'General Knowledge Quiz', category: 'Miscellaneous', date: 'April 15, 2024', score: '8/10' },
-      { title: 'Science Trivia', category: 'Science', date: 'April 10, 2024', score: '6/10' },
-      // Add more quiz history data
-    ];
-
-    const tableBody = document.querySelector('.user-history table tbody');
-
-    quizHistory.forEach(quiz => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${quiz.title}</td>
-        <td>${quiz.category}</td>
-        <td>${quiz.date}</td>
-        <td>${quiz.score}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-  </script>
+    <main>
+        <h1>Your Dashboard</h1>
+        <nav class="dashboard-nav">
+            <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Paths</a></li>
+                <li><a href="#">Topics</a></li>
+                <li><a href="#" class="active">Quizzes</a></li>
+            </ul>
+        </nav>
+        <section class="in-progress">
+            <h2>In Progress</h2>
+            <div class="quiz-item">
+                <div class="quiz-info">
+                    <div class="quiz-icon">🌥️</div>
+                    <div>
+                        <h3>Introduction to the Cloud</h3>
+                        <p>Question 1 of 5</p>
+                    </div>
+                </div>
+                <div class="quiz-progress">50%</div>
+            </div>
+            <div class="quiz-item">
+                <div class="quiz-info">
+                    <div class="quiz-icon">🌥️</div>
+                    <div>
+                        <h3>The Basics of Cloud Computing</h3>
+                        <p>Question 2 of 5</p>
+                    </div>
+                </div>
+                <div class="quiz-progress">40%</div>
+            </div>
+            <div class="quiz-item">
+                <div class="quiz-info">
+                    <div class="quiz-icon">🌥️</div>
+                    <div>
+                        <h3>How to Use Cloud Services</h3>
+                        <p>Question 3 of 5</p>
+                    </div>
+                </div>
+                <div class="quiz-progress">60%</div>
+            </div>
+            <div class="quiz-item">
+                <div class="quiz-info">
+                    <div class="quiz-icon">🌥️</div>
+                    <div>
+                        <h3>Cloud Computing for Business</h3>
+                        <p>Question 4 of 5</p>
+                    </div>
+                </div>
+                <div class="quiz-progress">55%</div>
+            </div>
+            <div class="quiz-item">
+                <div class="quiz-info">
+                    <div class="quiz-icon">🌥️</div>
+                    <div>
+                        <h3>Cloud Security Best Practices</h3>
+                        <p>Question 5 of 5</p>
+                    </div>
+                </div>
+                <div class="quiz-progress">45%</div>
+            </div>
+        </section>
+        <button class="resume-btn">Resume</button>
+    </main>
 </body>

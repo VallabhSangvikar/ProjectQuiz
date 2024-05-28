@@ -2,33 +2,20 @@
 <link rel="stylesheet" href="/css/testrules.css">
 <body>
     <main>
-        <h2>Test Rules</h2>
+        <h2>Welcome to the QuizMaster</h2>
+        <p>Before you start, here are some rules and instructions for taking a quiz on QuizMaster. By clicking "Start Quiz" below, you agree to these terms.</p>
         <div class="rules">
             <ol>
-                <li>Read each question carefully before answering.</li>
-                <li>You cannot go back and change your answers once submitted.</li>
-                <li>The test is timed, and you will have 60 minutes to complete it.</li>
-                <li>Cheating or any form of academic dishonesty is strictly prohibited.</li>
-                <li>Make sure to double-check your answers before submitting.</li>
+                <li>You can't pause or rewind the timer, so make sure you have enough time to finish.</li>
+                <li>You can skip a question and come back to it later.</li>
+                <li>If you're not sure about an answer, guess! You won't lose points for wrong answers.</li>
+                <li>Your score is based on a combination of how many questions you get right and how quickly you answer them.</li>
             </ol>
         </div>
         <div class="agree-checkbox">
             <input type="checkbox" id="agreeCheckbox">
             <label for="agreeCheckbox">I agree to the test rules</label>
         </div>
-        <button class="start-btn" disabled>Start Test</button>
-    </main>
-    <script>
-        const agreeCheckbox = document.getElementById('agreeCheckbox');
-        const startBtn = document.querySelector('.start-btn');
-
-        agreeCheckbox.addEventListener('change', () => {
-            startBtn.disabled = !agreeCheckbox.checked;
-        });
-
-        startBtn.addEventListener('click', () => {
-            // Redirect to the test page or perform the necessary actions
-            window.location.href = '/test';
-        });
-    </script>
+        <a href="/quizpage" class="start-btn" target="_blank">Start Quiz</a>
+    </main>    
 </body>
