@@ -37,7 +37,9 @@ app.get("/",(req,res)=>{
 app.get("/home",(req,res)=>{
     res.render("listings/home.ejs");
 })
-
+app.get("/signup",(req,res)=>{
+    res.render("listings/signup.ejs");
+})
 app.get("/createquiz",(req,res)=>{
     res.render("listings/createquiz.ejs");
 })
