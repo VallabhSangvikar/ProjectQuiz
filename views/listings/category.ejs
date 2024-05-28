@@ -1,73 +1,80 @@
 <% layout("layouts/boilerplate")%>
 <link rel="stylesheet" href="css/category.css">
 <body>
-
   <main>
-    <section class="quiz-categories">
-      <h2>Explore Quizzes by Category</h2>
-      <div class="category-container">
-        <div class="category-card">
-          <div class="category-image">
-            <img src="science.svg" alt="Science">
-          </div>
-          <div class="category-info">
-            <h3>Science</h3>
-            <p>Delve into the wonders of the natural world.</p>
-            <a href="/quizlist/science" class="cta-button">Take Science Quizzes</a>
-          </div>
+    <div class="container">
+      <h1>Choose a category</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for quizzes...">
+      </div>
+      <div class="category-list">
+        <div class="category-row">
+          <a href="#" class="category-item">Popular</a>
+          <a href="#"  class="category-item">Trending</a>
+          <a href="#"  class="category-item">New</a>
+          <a href="#" class="category-item">Picks for you</a>
+          <a href="#" class="category-item">Just for fun</a>
+          <a href="#" class="category-item">Trivia</a>
+          <a href="/quizlist/entertainment" class="category-item">Entertainment</a>
+          <a href="/quizlist/geography" class="category-item">Geography</a>
+          <a href="/quizlist/history" class="category-item">History</a>
         </div>
-        <div class="category-card">
-          <div class="category-image">
-            <img src="sports.svg" alt="Sports">
-          </div>
-          <div class="category-info">
-            <h3>Sports</h3>
-            <p>Test your knowledge of athletics and games.</p>
-            <a href="/quizlist/sports" class="cta-button">Take Sports Quizzes</a>
-          </div>
+        <div class="category-row">
+          <a href="/quizlist/science" class="category-item">Science</a>
+          <a href="/quizlist/sports" class="category-item">Sport</a>
+          <a href="/quizlist/math" class="category-item">Math</a>
         </div>
-        <div class="category-card">
-          <div class="category-image">
-            <img src="history.svg" alt="History">
-          </div>
-          <div class="category-info">
-            <h3>History</h3>
-            <p>Explore the stories that shaped our past.</p>
-            <a href="/quizlist/history" class="cta-button">Take History Quizzes</a>
-          </div>
+      </div>
+      <h2>Daily Quizzes</h2>
+      <div class="daily-quizzes">
+        <div class="quiz-item">
+          <img src="/images/category/Screenshot 2024-05-28 161341.png" alt="Animal Icons">
+          <h3>Cute or Not?</h3>
+          <p>7 questions. Are these animals cute or not?</p>
         </div>
-        <div class="category-card">
-          <div class="category-image">
-            <img src="geography.svg" alt="Geography">
-          </div>
-          <div class="category-info">
-            <h3>Geography</h3>
-            <p>Journey across the globe with our geography quizzes.</p>
-            <a href="/quizlist/geography" class="cta-button">Take Geography Quizzes</a>
-          </div>
+        <div class="quiz-item">
+          <img src="/images/category/Screenshot 2024-05-28 161359.png" alt="People Pleaser Quiz">
+          <h3>Are You a People Pleaser?</h3>
+          <p>10 questions. Are you a people pleaser?</p>
         </div>
-        <div class="category-card">
-          <div class="category-image">
-            <img src="entertainment.svg" alt="Entertainment">
+      </div>
+      <div class="featured-topics">
+        <h2>Featured Topics</h2>
+        <div class="topic-grid">
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160133.png" alt="Harry Potter">
+            <h3>Harry Potter</h3>
           </div>
-          <div class="category-info">
-            <h3>Entertainment</h3>
-            <p>Indulge in quizzes about movies, TV, music, and more.</p>
-            <a href="/quizlist/entertainment" class="cta-button">Take Entertainment Quizzes</a>
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160123.png" alt="Disney">
+            <h3>Disney</h3>
           </div>
-        </div>
-        <div class="category-card">
-          <div class="category-image">
-            <img src="math.svg" alt="Math">
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160114.png" alt="90s Trivia">
+            <h3>90s Trivia</h3>
           </div>
-          <div class="category-info">
-            <h3>Math</h3>
-            <p>Challenge your mind with math-themed quizzes.</p>
-            <a href="/quizlist/math" class="cta-button">Take Math Quizzes</a>
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160106.png" alt="Friends">
+            <h3>Friends</h3>
+          </div>
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160056.png" alt="Marvel">
+            <h3>Marvel</h3>
+          </div>
+          <div class="topic-item">
+            <img src="/images/category/Screenshot 2024-05-28 160050.png" alt="Star Wars">
+            <h3>Star Wars</h3>
+          </div>
+          <div class="topic-item">
+            <img src="the-office.jpg" alt="The Office">
+            <h3>The Office</h3>
+          </div>
+          <div class="topic-item">
+            <img src="stranger-things.jpg" alt="Stranger Things">
+            <h3>Stranger Things</h3>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 </body>
-</html>

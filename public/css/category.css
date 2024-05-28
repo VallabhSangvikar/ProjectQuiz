@@ -1,66 +1,82 @@
 
-/* Main content styles */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  
-  .quiz-categories {
-    margin-bottom: 60px;
-  }
-  
-  .quiz-categories h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-  
-  .category-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 30px;
-  }
-  
-  .category-card {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .category-image {
-    flex: 0 0 150px;
-    background-color: #708caa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .category-image img {
-    max-width: 70px;
-  }
-  
-  .category-info {
-    flex-grow: 1;
-    padding: 20px;
-  }
-  
-  .category-info h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .category-info p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .category-info .cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.category-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-item {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  margin: 5px;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.daily-quizzes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.quiz-item {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.quiz-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.featured-topics {
+  margin-bottom: 40px;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.topic-item {
+  text-align: center;
+}
+
+.topic-item img {
+  width: 100%;
+  border-radius: 10px;
+}

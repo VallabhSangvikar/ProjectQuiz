@@ -1,61 +1,62 @@
+/* Reset some default styles */
+
 main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  section {
-    margin-bottom: 40px;
-  }
+.quiz-list {
+  background-color: #edecec;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
 
-  h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #090909; /* Medium purple color */
-  }
+.quiz-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-  .quiz-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 20px;
-  }
+.quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .quiz-item {
-  
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.416);
-    display:flex;
-    flex-direction: column;
-    text-wrap:wrap;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s;
-    width: 15rem;
-  }
+.quiz-item {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-  .quiz-item:hover {
-    transform: translateY(-5px);
-  }
+.quiz-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
 
-  .quiz-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #000000; /* Deep purple color */
-  }
+.quiz-item p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
 
-  .cta-button {
-    display: inline-block;
-    background-color: #0076b6cf; /* Medium purple color */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-  }
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
 
-  .cta-button:hover {
-    background-color: #0077b6; /* Bluish purple color */
-  }
+.cta-button:hover {
+  background-color: #0056b3;
+}

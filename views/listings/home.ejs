@@ -1,26 +1,60 @@
 <% layout("layouts/boilerplate") %>
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="/css/home.css">
 <body>
-    <main>
-    <section id="featured-quizzes">
-      <h2>Featured Quizzes</h2>
-      <div class="quiz-grid">
-        <!-- Featured quizzes dynamically generated here -->
-      </div>
-      <a href="/featuredquiz" class="cta-button">Start Quizzing</a>
+  <main>
+    <section class="welcome-section">
+        <div class="welcome-image">
+            <img src="/images/home/Screenshot 2024-05-28 110709.png" alt="Quiz Image">
+        </div>
+        <div class="welcome-text">
+            <h1>Welcome to BrainyQuiz</h1>
+            <p>A place to learn and grow, together</p>
+            <button class="start-exploring">Start Exploring</button>
+        </div>
     </section>
-
-    <section id="categories">
-      <h2>Categories</h2>
-      <div class="category-grid">
-        <!-- Categories dynamically generated here -->
-      </div>
+    <section class="featured-content">
+        <h2>Featured Content</h2>
+        <p>Take quizzes by the community, or create your own. Explore and learn new things.</p>
+        <button class="view-all">View All</button>
+        <div class="quiz-categories">
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 110736.png" alt="Featured Quiz">
+                <p>Featured Quiz</p>
+                <span>Quiz: The Ultimate Harry Potter Trivia</span>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 110752.png" alt="Top Quizzes">
+                <p>Top Quizzes</p>
+                <span>Quiz: General Knowledge</span>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 110758.png" alt="New Quizzes">
+                <p>New Quizzes</p>
+                <span>Quiz: Science Trivia</span>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 111655.png" alt="Technology">
+                <p>Technology</p>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 111704.png" alt="Entertainment">
+                <p>Entertainment</p>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 111711.png" alt="Science">
+                <p>Science</p>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 111721.png" alt="Lifestyle">
+                <p>Lifestyle</p>
+            </div>
+            <div class="category">
+                <img src="/images/home/Screenshot 2024-05-28 111730.png" alt="History">
+                <p>History</p>
+            </div>
+        </div>
     </section>
-
-    <section id="about">
-      <h2>Why Quiz Enthusiast?</h2>
-      <p>Quiz Enthusiast is the premier destination for quiz takers and creators alike. Our ever-expanding library of engaging quizzes covers a wide range of topics, catering to curious minds of all interests. Whether you're looking to test your knowledge, discover new passions, or challenge your friends, you'll find something to pique your curiosity on Quiz Enthusiast.</p>
-      <a href="/createquiz" class="cta-button">Create Your Own Quiz</a>
-    </section>
-  </main>
+</main>
 </body>
