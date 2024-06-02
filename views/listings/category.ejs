@@ -48,7 +48,11 @@
               <img src='/images/unloaded/pngtree-image-icon-png-image_8177635.png' alt="Reference image">
             <% } %>
             <div><%=quiz[i].quiztitle %></div>
-            <div><button class="start">start</button></div>
+
+            <form action="/quiz/rules" method="post">
+              <input type="hidden" name="hiddenId" value="<%= quiz[i]._id %>">
+              <div><button class="start">start</button></div>
+            </form>
           </li>
           <% } %>
         </ul>

@@ -94,8 +94,9 @@ app.post("/home", upload.single('image'), async (req, res) => {
         });
 });
 
-app.get("/quiz/rules",(req,res)=>{
-    res.render("listings/testrules.ejs");
+app.post("/quiz/rules",(req,res)=>{
+    let {id}=req.body;
+    res.render("listings/testrules.ejs",{id});
 })
 
 app.listen(port,()=>{
