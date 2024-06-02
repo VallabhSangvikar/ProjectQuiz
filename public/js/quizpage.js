@@ -1,10 +1,9 @@
      // JavaScript code...
     //bringing the title dynamically
-    let quiztitle = document.getElementById("quiz-title").innerText;
-    let newtitle = "test1";
-    let addtitle = quiztitle + newtitle;
-    document.getElementById("quiz-title").innerText = addtitle;
-
+    // let quiztitle = document.getElementById("quiz-title").innerText;
+    // let newtitle = "test1";
+    // let addtitle = quiztitle + newtitle;
+    // document.getElementById("quiz-title").innerText = addtitle;
     //bringing the questions dynamically
     var questions = quizapp.quizzes.find();
 

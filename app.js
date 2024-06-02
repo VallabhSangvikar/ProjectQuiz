@@ -3,11 +3,12 @@ const app=express();
 const path=require("path");
 const ejs=require("ejs");
 const ejsMate=require("ejs-mate");
-const multer= require("multer");
+const multer= require("multer"); //saving images in database
 const port=4040;
 const mongoose =require("mongoose");
 const methodOverride=require("method-override");
 const Quiz=require("./models/createquizModel");
+const { v4: uuidv4 } = require('uuid');
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -65,10 +66,6 @@ app.get("/contact",(req,res)=>{
     res.render("listings/contact.ejs");
 })
 
-app.get("/quizpage",(req,res)=>{
-    res.render("listings/quizpage.ejs");
-});
-
 app.post("/home", upload.single('image'), async (req, res) => {
     let questiondata = JSON.parse(req.body.questiondata);
 
@@ -94,10 +91,16 @@ app.post("/home", upload.single('image'), async (req, res) => {
         });
 });
 
-app.post("/quiz/rules",(req,res)=>{
-    let {id}=req.body;
-    res.render("listings/testrules.ejs",{id});
+app.get("/quiz/:id/rules",(req,res)=>{
+    let {id}=req.params;
+    let uniqueid=uuidv4();
+    res.render("listings/testrules.ejs",{id,uniqueid});
 })
+
+app.get("/quiz/:id/:newid",(req,res)=>{
+    console.log(req.params);
+    res.render("listings/quizpage.ejs");
+});
 
 app.listen(port,()=>{
     console.log(`port is connected to ${port}`)
