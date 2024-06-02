@@ -4,15 +4,19 @@ const Schema=mongoose.Schema;
 const quizdata= new Schema({
     quiztitle: {
         type:String,
-        reqiured:true
+        required:true
     },
     quizdescription:{
         type:String,
-        reqiured:true
+        required:true
+    },
+    image:{
+        data: Buffer,
+        contentType: String,
     },
     quizCategory:{
         type:String,
-        reqiured:true
+        required:true
     },
     questions:{
         type:Array

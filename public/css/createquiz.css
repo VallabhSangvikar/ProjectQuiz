@@ -170,3 +170,10 @@ main {
   hyphens: auto;
   color: #000000;
 }
+.image{
+  background-color: wheat;
+  height:fit-content;
+}
+.inputimage{
+  padding:15px;
+}

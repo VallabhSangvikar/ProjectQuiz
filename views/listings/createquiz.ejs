@@ -7,7 +7,7 @@
         <h2>Create Your Own Multiple-Choice Quiz</h2>
         <div class="create-quiz-content">
 
-          <form class="quiz-form" action="/home" method="post">
+          <form class="quiz-form" action="/home" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="quiz-title">Quiz Title</label>
               <input type="text" id="quiz-title" name="quizTitle" required>
@@ -15,6 +15,11 @@
             <div class="form-group">
               <label for="quiz-description">Quiz Description</label>
               <textarea id="quiz-description" name="quizDescription" required></textarea>
+            </div>
+            <h3>give an image input</h3>
+            <div class="image">
+                <input type="file" class="inputimage" name="image" accept="image/* ">
+            <br><br><br>
             </div>
             <div class="form-group">
               <label for="quiz-category">Quiz Category</label>

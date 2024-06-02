@@ -3,11 +3,14 @@ const app=express();
 const path=require("path");
 const ejs=require("ejs");
 const ejsMate=require("ejs-mate");
-
+const multer= require("multer");
 const port=4040;
 const mongoose =require("mongoose");
 const methodOverride=require("method-override");
 const Quiz=require("./models/createquizModel");
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 
 app.use(methodOverride("_method"));
@@ -30,6 +33,7 @@ async function main(){
     await mongoose.connect(MONGO_URL);
 }
 
+//starting routes
 app.get("/",(req,res)=>{
     res.render("listings/home.ejs");
 })
@@ -48,8 +52,9 @@ app.get("/featuredquiz",(req,res)=>{
     res.render("listings/featuredquiz.ejs");
 })
 
-app.get("/categories",(req,res)=>{
-    res.render("listings/category.ejs");
+app.get("/categories",async(req,res)=>{
+    let quiz= await Quiz.find();
+    res.render("listings/category.ejs",{quiz});
 })
 
 app.get("/about",(req,res)=>{
@@ -63,22 +68,33 @@ app.get("/contact",(req,res)=>{
 app.get("/quizpage",(req,res)=>{
     res.render("listings/quizpage.ejs");
 });
-app.post("/home",(req,res)=>{
-    let questiondata=JSON.parse(req.body.questiondata)
-    let addquiz=new Quiz({
-        quiztitle:req.body.quizTitle,
-        quizdescription:req.body.quizDescription,
-        quizCategory:req.body.quizCategory,
-        questions:questiondata
+
+app.post("/home", upload.single('image'), async (req, res) => {
+    let questiondata = JSON.parse(req.body.questiondata);
+
+    let addquiz = new Quiz({
+        quiztitle: req.body.quizTitle,
+        quizdescription: req.body.quizDescription,
+        image: {
+            data: req.file.buffer,
+            contentType: req.file.mimetype
+        },
+        quizCategory: req.body.quizCategory,
+        questions: questiondata
     });
-    addquiz.save();
-    res.redirect("/home");
-})
-app.get("/quizlist/:category",async(req,res)=>{
-    let {category}=req.params;
-    let tests= await Quiz.find({quizCategory:category});
-    res.render("listings/testlist.ejs",{tests});
+
+    addquiz.save()
+        .then(async() => {
+            let quiz= await Quiz.find();
+            console.log("Question Data stored in MongoDB");
+            res.render("listings/category.ejs",{quiz});
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).send("Error storing quiz data");
+        });
 });
+
 app.get("/quiz/rules",(req,res)=>{
     res.render("listings/testrules.ejs");
 })
