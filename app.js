@@ -97,9 +97,11 @@ app.get("/quiz/:id/rules",(req,res)=>{
     res.render("listings/testrules.ejs",{id,uniqueid});
 })
 
-app.get("/quiz/:id/:newid",(req,res)=>{
-    console.log(req.params);
-    res.render("listings/quizpage.ejs");
+app.get("/quiz/:id/:newid",async(req,res)=>{
+    let {id}=req.params;
+    const Quearr=await Quiz.findById(id);
+    console.log(Quearr);
+    res.render("listings/quizpage.ejs",{Quearr});
 });
 
 app.listen(port,()=>{
