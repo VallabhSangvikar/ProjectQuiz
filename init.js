@@ -16,7 +16,42 @@ let demoQuiz = [
         quizdescription:"from 100 overall 30 people jump in georgepool",
         quizCategory:"BGMI",
         questions:[{
-            quest:"the greatest footballer in the world",
+            question:"the greatest footballer in the world",
+            option1:"messi",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messi",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messi",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messi",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messi",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
             option1:"messi",
             option2:"ronaldo",
             option3:"virat kohli",
@@ -27,7 +62,7 @@ let demoQuiz = [
         quizdescription:"from 100 overall 30 people jump in georgepool",
         quizCategory:"BGMI",
         questions:[{
-            quest:"the greatest footballer in the world",
+            question:"the greatest footballer in the world",
             option1:"messi",
             option2:"ronaldo",
             option3:"virat kohli",
@@ -38,7 +73,28 @@ let demoQuiz = [
         quizdescription:"from 100 overall 30 people jump in georgepool",
         quizCategory:"BGMI",
         questions:[{
-            quest:"the greatest footballer in the world",
+            question:"the greatest footballer in the world",
+            option1:"messizhvsg",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messinshas",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
+            option1:"messiaksjnjkascn",
+            option2:"ronaldo",
+            option3:"virat kohli",
+            option4:"none of the above",
+            ans:"A"
+        },{
+            question:"the greatest footballer in the world",
             option1:"messi",
             option2:"ronaldo",
             option3:"virat kohli",

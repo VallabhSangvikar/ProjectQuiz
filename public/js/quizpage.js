@@ -39,10 +39,10 @@
 
     function displayQuestionAndOptions(questionIndex) {
       QuestionShow.textContent = questions[questionIndex].question;
-      opt1.textContent = questions[questionIndex].options[0];
-      opt2.textContent = questions[questionIndex].options[1];
-      opt3.textContent = questions[questionIndex].options[2];
-      opt4.textContent = questions[questionIndex].options[3];
+      opt1.textContent = questions[questionIndex].option1;
+      opt2.textContent = questions[questionIndex].option2;
+      opt3.textContent = questions[questionIndex].option3;
+      opt4.textContent = questions[questionIndex].option4;
       changeColor(questionIndex);
     }
 
