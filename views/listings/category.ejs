@@ -40,11 +40,17 @@
       <div class="in-progress">
         <h2>In Progress</h2>
         <ul>
+          <% for(let i=0;i<quiz.length;i++){ %>
           <li>
-            <img src="data:<%=quiz[0].image.contentType%>;base64,<%= quiz[0].image.data.toString("base64") %>" alt="People Pleaser Quiz">
-            <div><%=quiz[0].quiztitle %></div>
+            <% if(quiz[i].image && quiz[i].image.data){ %>
+              <img src="data:<%=quiz[i].image.contentType%>;base64,<%= quiz[i].image.data.toString("base64") %>" alt="People Pleaser Quiz">
+            <%} else{ %>
+              <img src='/images/unloaded/pngtree-image-icon-png-image_8177635.png' alt="Reference image">
+            <% } %>
+            <div><%=quiz[i].quiztitle %></div>
             <div><button class="start">start</button></div>
           </li>
+          <% } %>
         </ul>
       </div>
       

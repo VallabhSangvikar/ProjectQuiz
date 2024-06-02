@@ -75,13 +75,12 @@ app.post("/home", upload.single('image'), async (req, res) => {
     let addquiz = new Quiz({
         quiztitle: req.body.quizTitle,
         quizdescription: req.body.quizDescription,
-        image: {
-            data: req.file.buffer,
-            contentType: req.file.mimetype
-        },
         quizCategory: req.body.quizCategory,
         questions: questiondata
     });
+    if(req.file){
+        addquiz.image={data: req.file.buffer,contentType: req.file.mimetype}
+    }
 
     addquiz.save()
         .then(async() => {
