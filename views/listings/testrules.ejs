@@ -16,6 +16,26 @@
             <input type="checkbox" id="agreeCheckbox">
             <label for="agreeCheckbox">I agree to the test rules</label>
         </div>
-        <a href="/quiz/<%=id%>/<%=uniqueid%>" class="start-btn" target="_blank">Start Quiz</a>
-    </main>    
+            <a href="/quiz/<%=id%>/<%=uniqueid%>" class="start-btn" target="_blank">Start Quiz</a>
+    </main>
+   <script>
+    const checkbox = document.getElementById('agreeCheckbox');
+    const startBtn = document.querySelector('.start-btn');
+
+    startBtn.style.color = 'grey';
+    startBtn.style.backgroundColor = 'lightgrey';
+    startBtn.style.pointerEvents = 'none';
+
+    checkbox.addEventListener('change',()=>{
+        if (checkbox.checked) {
+            startBtn.style.color = 'white';
+            startBtn.style.backgroundColor = ' #007bff';
+            startBtn.style.pointerEvents = 'auto';
+        } else {
+            startBtn.style.color = 'grey';
+            startBtn.style.backgroundColor = 'lightgrey';
+            startBtn.style.pointerEvents = 'none';
+        }
+    });
+   </script>   
 </body>
